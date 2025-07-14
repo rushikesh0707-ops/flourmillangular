@@ -1,14 +1,18 @@
 const express = require('express');
 const path = require('path');
+
 const app = express();
 
-app.use(express.static(__dirname + '/dist/admin-panel'));
+// Serve static files from the 'browser' folder
+const browserPath = path.join(__dirname, 'dist', 'app-name', 'browser');
+app.use(express.static(browserPath));
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname + '/dist/admin-panel/browser/index.html'));
+// Redirect all other routes to index.html
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(browserPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`App running on port ${PORT}`);
+  console.log(`Server started on http://localhost:${PORT}`);
 });
