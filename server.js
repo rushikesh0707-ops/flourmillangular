@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 
 // Serve static files from the 'browser' folder
-const browserPath = path.join(__dirname, 'dist', 'app-name', 'browser');
+const browserPath = path.join(__dirname, 'dist', 'admin-panel', 'browser');
 app.use(express.static(browserPath));
 
 // Redirect all other routes to index.html
