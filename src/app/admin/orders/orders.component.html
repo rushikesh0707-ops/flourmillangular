@@ -1,0 +1,71 @@
+<!-- <h2>Orders</h2>
+
+<mat-card *ngFor="let order of orders" style="margin-bottom: 16px;">
+  <mat-card-title>Order #{{ order.id }}</mat-card-title>
+  <mat-card-content>
+    <p><strong>Name:</strong> {{ order.userName }}</p>
+    <p><strong>Phone:</strong> {{ order.phone }}</p>
+    <p><strong>Address:</strong> {{ order.address }}</p>
+    <p><strong>Total:</strong> ₹{{ order.totalAmount }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Paid:</strong> {{ order.isPaid ? 'Yes' : 'No' }}</p>
+    <p><strong>Delivery Boy:</strong> {{ order.deliveryBoyName || 'Unassigned' }}</p>
+
+    <div style="margin-top: 10px;">
+      <mat-form-field>
+        <mat-label>Delivery Boy ID</mat-label>
+        <input matInput [(ngModel)]="deliveryBoyId" />
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="assignDelivery(order.id)">Assign</button>
+    </div>
+
+    <div style="margin-top: 10px;">
+      <button mat-raised-button color="accent" (click)="markAsPaid(order.id)" [disabled]="order.isPaid">Mark as Paid</button>
+    </div>
+  </mat-card-content>
+</mat-card> -->
+
+<div class="container">
+  <h2 class="section-title mb-4">📦 Orders Management</h2>
+
+  <div class="row g-4">
+    <div class="col-md-6 col-lg-4" *ngFor="let order of orders">
+      <div class="card order-card shadow-sm h-100">
+        <div class="card-header d-flex justify-content-between align-items-center bg-light">
+          <div>
+            <h5 class="card-title mb-0">Order #{{ order.orderId }}</h5>
+            <small class="text-muted">₹{{ order.totalAmount }} • 
+              <span [ngClass]="order.isPaid ? 'text-success' : 'text-danger'">
+                {{ order.isPaid ? 'Paid' : 'Unpaid' }}
+              </span>
+            </small>
+          </div>
+          <i class="bi bi-receipt fs-4 text-warning"></i>
+        </div>
+
+        <div class="card-body">
+          <p><i class="bi bi-person text-primary me-1"></i><strong>Name:</strong> {{ order.userName }}</p>
+          <p><i class="bi bi-telephone text-primary me-1"></i><strong>Phone:</strong> {{ order.phone }}</p>
+          <p><i class="bi bi-geo-alt text-primary me-1"></i><strong>Address:</strong> {{ order.address }}</p>
+          <p><i class="bi bi-credit-card text-primary me-1"></i><strong>Status:</strong>
+            <span [ngClass]="order.isPaid ? 'badge bg-success' : 'badge bg-danger'">
+              {{ order.isPaid ? 'Paid' : 'Unpaid' }}
+            </span>
+          </p>
+          <p><i class="bi bi-truck text-primary me-1"></i><strong>Delivery Boy:</strong> 
+            {{ order.deliveryBoyName || 'Not assigned' }}
+          </p>
+        </div>
+
+        <div class="card-footer bg-white d-flex justify-content-end gap-2">
+          <button class="btn btn-outline-primary btn-sm" (click)="assignDelivery(order)">
+            <i class="bi bi-person-plus me-1"></i>Assign Delivery
+          </button>
+          <button class="btn btn-success btn-sm" (click)="markAsPaid(order)" [disabled]="order.isPaid">
+            <i class="bi bi-check-circle me-1"></i>Mark as Paid
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

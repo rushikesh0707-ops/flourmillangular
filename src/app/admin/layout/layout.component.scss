@@ -1,0 +1,124 @@
+// .admin-container {
+//     height: 95vh;
+//   }
+  
+//   .admin-sidenav {
+//     width: 250px;
+//     background-color: #f5f5f5;
+//     border-right: 1px solid #ddd;
+  
+//     .admin-logo {
+//       display: flex;
+//       align-items: center;
+//       gap: 10px;
+//       padding: 16px;
+//       font-weight: bold;
+//       font-size: 18px;
+  
+//       .logo-icon {
+//         color: #f57c00;
+//       }
+//     }
+  
+//     mat-nav-list {
+//         gap: 12px; 
+//         display: flex;
+//         flex-direction: column;
+
+//       mat-icon{
+//         margin-bottom: -5px;
+//       }
+        
+//       a {
+//         display: flex;
+//         align-items: center;
+//         gap: 10px;
+//         font-weight: 500;
+//         color: #333;
+//         transition: background-color 0.2s;
+  
+//         &:hover {
+//           background-color: #e3f2fd;
+//         }
+  
+//         &.active-link {
+//           background-color: #bbdefb;
+//           color: #0d47a1;
+  
+//           mat-icon {
+//             color: #f57c00;
+            
+//           }
+//         }
+//       }
+//     }
+//   }
+  
+//   .admin-toolbar {
+//     position: sticky;
+//     top: 0;
+//     z-index: 1000;
+//     display: flex;
+//     align-items: center;
+//     gap: 10px;
+//     padding-left: 16px;
+  
+//     .toolbar-title {
+//       font-size: 18px;
+//       font-weight: 500;
+//     }
+//   }
+  
+//   .admin-content {
+//     padding: 24px;
+//   }
+
+.admin-layout {
+  min-height: 100vh;
+  background-color: #f5f7fa;
+}
+
+.sidebar {
+  width: 240px;
+  background-color: white;
+  color: #fff;
+  padding-top: 16px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.sidebar-header {
+  border-bottom: 1px solid rgba(221, 11, 11, 0.863);
+}
+
+.sidebar .nav-link {
+  color: black;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  border-radius: 0 20px 20px 0;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: 500;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-navbar {
+  background-color: #f9c846;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.content-area {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
